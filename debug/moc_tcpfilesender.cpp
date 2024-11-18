@@ -7,10 +7,7 @@
 *****************************************************************************/
 
 #include "../tcpfilesender.h"
-#include <QtNetwork/QSslPreSharedKeyAuthenticator>
-#include <QtNetwork/QSslError>
 #include <QtGui/qtextcursor.h>
-#include <QtGui/qscreen.h>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -40,12 +37,12 @@ namespace {
 struct qt_meta_stringdata_CLASSTcpFileSenderENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSTcpFileSenderENDCLASS = QtMocHelpers::stringData(
     "TcpFileSender",
-    "start",
+    "openFile",
     "",
+    "start",
     "startTransfer",
     "updateClientProgress",
-    "numBytes",
-    "openFile"
+    "numBytes"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -66,16 +63,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSTcpFileSenderENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x0a,    1 /* Public */,
-       3,    0,   39,    2, 0x0a,    2 /* Public */,
-       4,    1,   40,    2, 0x0a,    3 /* Public */,
-       6,    0,   43,    2, 0x0a,    5 /* Public */,
+       1,    0,   38,    2, 0x08,    1 /* Private */,
+       3,    0,   39,    2, 0x08,    2 /* Private */,
+       4,    0,   40,    2, 0x08,    3 /* Private */,
+       5,    1,   41,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::LongLong,    5,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::LongLong,    6,
 
        0        // eod
 };
@@ -89,15 +86,15 @@ Q_CONSTINIT const QMetaObject TcpFileSender::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSTcpFileSenderENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<TcpFileSender, std::true_type>,
+        // method 'openFile'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'start'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'startTransfer'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'updateClientProgress'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<qint64, std::false_type>,
-        // method 'openFile'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<qint64, std::false_type>
     >,
     nullptr
 } };
@@ -108,10 +105,10 @@ void TcpFileSender::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         auto *_t = static_cast<TcpFileSender *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->start(); break;
-        case 1: _t->startTransfer(); break;
-        case 2: _t->updateClientProgress((*reinterpret_cast< std::add_pointer_t<qint64>>(_a[1]))); break;
-        case 3: _t->openFile(); break;
+        case 0: _t->openFile(); break;
+        case 1: _t->start(); break;
+        case 2: _t->startTransfer(); break;
+        case 3: _t->updateClientProgress((*reinterpret_cast< std::add_pointer_t<qint64>>(_a[1]))); break;
         default: ;
         }
     }
